@@ -15,6 +15,7 @@ namespace SQLConsoleApp
             {
                 try
                 {
+                    //todo parameterized queries
                     sqlConnection.Open();
 
                     //Insert User

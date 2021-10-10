@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQLConsoleApp
+namespace ConsoleAppSQL
 {
     public class User
     {
@@ -15,11 +15,12 @@ namespace SQLConsoleApp
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-              sb.Append($"User ID is: {ID}")
-                .Append($"Name is: {Username}")
-                .Append($"Password id: {Password}");
+            sb.Append($"User ID is: {ID}")
+              .Append($"Name is: {Username}")
+              .Append($"Password id: {Password}");
 
             return sb.ToString();
         }
     }
 }
+

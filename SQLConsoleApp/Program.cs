@@ -12,10 +12,8 @@ namespace SQLConsoleApp
 
         static void Main(string[] args)
         {
-            //string connString = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
 
             using (sqlConnection)
-            //using(SqlConnection connection = new SqlConnection(connString))
             {
                 try
                 {
@@ -106,21 +104,21 @@ namespace SQLConsoleApp
                     //}
 
                     //Update
-                    //Console.WriteLine("Enter a Username for Update: ");
-                    //string usernameForUpdate = Console.ReadLine();
+                    Console.WriteLine("Enter a Username for Update: ");
+                    string usernameForUpdate = Console.ReadLine();
 
-                    //Console.WriteLine("Enter a New password for User: ");
-                    //string newPassword = Console.ReadLine();
+                    Console.WriteLine("Enter a New password for User: ");
+                    string newPassword = Console.ReadLine();
 
-                    //SqlCommand cmdUpdate = new SqlCommand($"UPDATE FROM UsersDetails SET Password = '{newPassword}' " +
-                    //    $"WHERE Username = '{usernameForUpdate}'", sqlConnection);
+                    SqlCommand cmdUpdate = new SqlCommand($"UPDATE FROM UsersDetails SET Password = '{newPassword}' " +
+                        $"WHERE Username = '{usernameForUpdate}'", sqlConnection);
 
-                    //int rowsUpdated = cmdUpdate.ExecuteNonQuery();
-                    //if (rowsUpdated > 0)
-                    //{
-                    //    Console.WriteLine("Updated Successfully.");
-                    //    Console.WriteLine($"{rowsUpdated} rows updated succefully.");
-                    //}
+                    int rowsUpdated = cmdUpdate.ExecuteNonQuery();
+                    if (rowsUpdated > 0)
+                    {
+                        Console.WriteLine("Updated Successfully.");
+                        Console.WriteLine($"{rowsUpdated} rows updated succefully.");
+                    }
 
                     //Delete
                     //Console.WriteLine("Enter Username to Delete");

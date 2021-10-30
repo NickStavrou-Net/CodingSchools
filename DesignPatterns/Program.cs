@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Factory_Pattern;
+using DesignPatterns.Singleton;
 using System;
 
 namespace DesignPatterns
@@ -31,7 +32,10 @@ namespace DesignPatterns
             #region ObserverPattern
 
             #endregion
-
+            #region SingletonPattern
+            DBManager dBManager = DBManager.Instance;
+            dBManager.GetConnection();
+            #endregion
             Console.ReadLine();
 
         }

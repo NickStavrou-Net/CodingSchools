@@ -74,6 +74,42 @@ namespace BasicLINQ
                 Console.WriteLine($"{p.Product} {p.Category}");
             }
 
+            string[] names = { "George Sovatzis", "Nikos Stavrou", "Antonis Antoniou" };
+            var queryFirstNames =
+                (from name in names
+                 let fName = name.Split(' ')[0]   // Splits name into array and gets 1st element
+                select fName);
+
+            foreach(var s in queryFirstNames)
+            {
+                Console.WriteLine(s);
+            }
+
+            List<Customer> customers = new List<Customer>();
+            customers.Add(new Customer { Cid = "0001", FirstName = "George", LastName = "Sovatzis" });
+            customers.Add(new Customer { Cid = "0002", FirstName = "Nikos", LastName = "Stavrou" });
+            customers.Add(new Customer { Cid = "0003", FirstName = "Antonis", LastName = "Antoniou" });
+
+            List<Sale> sales = new List<Sale>();
+            sales.Add(new Sale { Cid = "0001", Amount = 500 });
+            sales.Add(new Sale { Cid = "0002", Amount = 1500 });
+            sales.Add(new Sale { Cid = "0003", Amount = 1000 });
+
+            var bigSaleCustomers =   // Get all customers with any purchase more than 1000 Euros
+                (from c in customers
+                 select new
+                 {
+                     c.FirstName,
+                     c.LastName,
+                     Sales = (from s in sales where s.Cid == c.Cid && s.Amount > 1000 select s)
+                 }
+                ).Where(x => x.Sales.Count() > 0);
+
+            foreach(var bc in bigSaleCustomers)
+            {
+                Console.WriteLine($"{bc.FirstName} {bc.LastName}");
+            }
+
         }
     }
 }

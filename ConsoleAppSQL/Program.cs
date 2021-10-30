@@ -11,7 +11,7 @@ namespace ConsoleAppSQL
     class Program
     {
         //1st 
-        //static readonly string connectionstring = @"Server=DESKTOP-6VLMGU5\SQLEXPRESS;Initial Catalog=AdoDB;Trusted_Connection=True;";
+        //static readonly string connectionstring = @"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AdoDB;Integrated Security=True;";
         //static readonly SqlConnection connection = new SqlConnection(connectionstring);
         static async Task Main(string[] args)
         {

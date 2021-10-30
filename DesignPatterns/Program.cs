@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Factory_Pattern;
+﻿using DesignPatterns.Builder_Pattern;
+using DesignPatterns.Factory_Pattern;
 using DesignPatterns.Observer_Pattern;
 using DesignPatterns.Singleton;
 using System;
@@ -52,7 +53,18 @@ namespace DesignPatterns
             //DBManager dBManager = DBManager.Instance;
             //dBManager.GetConnection();
             #endregion
-            
+
+            #region BuilderPattern
+            //TODO return ADO.NET sql connection string
+            FluentSqlConnection
+                .CreateConnection(config => config.ConnectionName = "Nick Connection")
+                .ForServer("(localdb)\\MSSQLLocalDB")
+                .AndDatabase("CSVDatabase")
+                .AsUser("DESKTOP-6VLMGU5\\NickStavrou")
+                .WithPassword("")
+                .Connect();
+            #endregion
+
 
         }
     }

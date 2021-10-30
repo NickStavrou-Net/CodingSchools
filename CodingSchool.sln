@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicLINQ", "BasicLINQ\BasicLINQ.csproj", "{54F84EF3-D5E4-4298-9BDD-7BF5BACB9980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOExamples", "OOExamples\OOExamples.csproj", "{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOExamples", "OOExamples\OOExamples.csproj", "{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI_Identity", "WebAPI_Identity\WebAPI_Identity.csproj", "{F8DC9A51-A642-4591-BE61-8104B31D3988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8DC9A51-A642-4591-BE61-8104B31D3988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8DC9A51-A642-4591-BE61-8104B31D3988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8DC9A51-A642-4591-BE61-8104B31D3988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8DC9A51-A642-4591-BE61-8104B31D3988}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

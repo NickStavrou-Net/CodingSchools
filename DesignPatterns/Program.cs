@@ -33,17 +33,17 @@ namespace DesignPatterns
 
             #region ObserverPattern
 
-            IBeneficiary george = new BankCustomer("George", "Sovatzis");
-            IBeneficiary rose = new BankCustomer("Rose", "Daponte");
-            IBeneficiary elias = new BankCustomer("Elias", "Sovatzis");
+            //IBeneficiary george = new BankCustomer("George", "Sovatzis");
+            //IBeneficiary rose = new BankCustomer("Rose", "Daponte");
+            //IBeneficiary elias = new BankCustomer("Elias", "Sovatzis");
 
-            SavingsAccount myAccount = new SavingsAccount { IBAN="GR58 0000 3000 5000" };
-            myAccount.Attach(rose);
-            myAccount.Attach(elias);
+            //SavingsAccount myAccount = new SavingsAccount { IBAN="GR58 0000 3000 5000" };
+            //myAccount.Attach(rose);
+            //myAccount.Attach(elias);
 
-            myAccount.Deposit(100);
-            myAccount.Detach(elias);
-            myAccount.Withdraw(50);
+            //myAccount.Deposit(100);
+            //myAccount.Detach(elias);
+            //myAccount.Withdraw(50);
 
 
             #endregion

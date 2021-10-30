@@ -12,7 +12,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIWithJWTAuth", "APIWithJW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{E5172950-7646-4340-A657-785469DE7452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicLINQ", "BasicLINQ\BasicLINQ.csproj", "{54F84EF3-D5E4-4298-9BDD-7BF5BACB9980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicLINQ", "BasicLINQ\BasicLINQ.csproj", "{54F84EF3-D5E4-4298-9BDD-7BF5BACB9980}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOExamples", "OOExamples\OOExamples.csproj", "{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,10 @@ Global
 		{54F84EF3-D5E4-4298-9BDD-7BF5BACB9980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54F84EF3-D5E4-4298-9BDD-7BF5BACB9980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54F84EF3-D5E4-4298-9BDD-7BF5BACB9980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C38C59-8BC0-4FD5-8522-9BAF1C7B5D9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

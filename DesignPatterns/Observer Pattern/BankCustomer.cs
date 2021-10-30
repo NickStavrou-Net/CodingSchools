@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Observer_Pattern
 {
-    public class BankCustomer
+    public class BankCustomer : IBeneficiary
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DesignPatterns.Observer_Pattern
+{
+    public interface IAccount
+    {
+        string IBAN { get; set; }
+
+        // Contracts for the observer pattern
+        void Attach(IBeneficiary beneficiary);
+        void Detach(IBeneficiary beneficiary);
+        void Notify();
+
+        // Account contracts
+        void Deposit(double amount);
+        void Withdraw(double amount);
+        double GetBalance();
+    }
+}

@@ -7,28 +7,30 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            string setting = "mysql";
+            #region FactoryPattern
+            //string setting = "mysql";
 
-            DBFactory dBFactory = new(setting);
-            IDatabase<Product> dbHandler = dBFactory.GetDatabase<Product>();
+            //DBFactory dBFactory = new(setting);
+            //IDatabase<Product> dbHandler = dBFactory.GetDatabase<Product>();
 
-            Product p = new();
+            //Product p = new();
 
-            switch (setting)
-            {
-                case "mssql":
-                    MsSQL<Product> mssql = new();
-                    mssql.Add(p);
-                    break;
-                case "mongodb":
-                    MongoDB<Product> mongo = new();
-                    mongo.Add(p);
-                    break;
-            }
+            //switch (setting)
+            //{
+            //    case "mssql":
+            //        MsSQL<Product> mssql = new();
+            //        mssql.Add(p);
+            //        break;
+            //    case "mongodb":
+            //        MongoDB<Product> mongo = new();
+            //        mongo.Add(p);
+            //        break;
+            //}
+            //dbHandler.Add(p);
+            #endregion
+            #region ObserverPattern
 
-
-
-            dbHandler.Add(p);
+            #endregion
 
             Console.ReadLine();
 

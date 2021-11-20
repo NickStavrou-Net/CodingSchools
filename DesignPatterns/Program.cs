@@ -57,10 +57,10 @@ namespace DesignPatterns
             #region BuilderPattern
             //TODO return ADO.NET sql connection string
             FluentSqlConnection
-                .CreateConnection(config => config.ConnectionName = "my Connection")
+                .CreateConnection(config => config.ConnectionName = "Nick Connection")
                 .ForServer("(localdb)\\MSSQLLocalDB")
                 .AndDatabase("CSVDatabase")
-                .AsUser("localhost\\gsovatzis")
+                .AsUser("DESKTOP-6VLMGU5\\NickStavrou")
                 .WithPassword("")
                 .Connect();
             #endregion

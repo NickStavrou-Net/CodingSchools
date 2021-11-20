@@ -27,7 +27,7 @@ namespace WebAPI_Identity.Controllers
         [HttpGet]
         public IEnumerable<Product> Get()
         {
-            var products = _context.products;
+            var products = _context.Products;
 
             return products;
         }
@@ -36,8 +36,8 @@ namespace WebAPI_Identity.Controllers
         [HttpGet("{id}", Name = "Get")]
         public ActionResult Get(int id)
         {
-            var prod = _context.products.Find(id);
-            if (prod != null)
+            var prod = _context.Products.Find(id);
+            if (prod is not null)
                 return new JsonResult(prod);
             else
                 return NotFound();
@@ -57,9 +57,9 @@ namespace WebAPI_Identity.Controllers
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] Product value)
         {
-            var prod = _context.products.AsNoTracking().Where(p => p.Id == id);
+            var prod = _context.Products.AsNoTracking().Where(p => p.Id == id);
 
-            if (prod != null)
+            if (prod is not null)
             {
                 _context.Update(value);
                 _context.SaveChanges();
@@ -74,8 +74,8 @@ namespace WebAPI_Identity.Controllers
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            var prod = _context.products.Find(id);
-            if(prod!=null) { 
+            var prod = _context.Products.Find(id);
+            if(prod is not null) { 
                 _context.Remove(prod);
                 _context.SaveChanges();
                 return new JsonResult(prod);    // I return the deleted product

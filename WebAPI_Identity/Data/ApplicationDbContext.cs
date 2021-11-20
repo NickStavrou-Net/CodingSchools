@@ -12,6 +12,6 @@ namespace WebAPI_Identity.Data
             
         }
 
-        public DbSet<Product> products { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

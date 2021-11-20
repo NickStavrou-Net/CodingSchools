@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Threading.Tasks;
-using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using WebAPI_Identity.Data;
 using WebAPI_Identity.Helpers;
 using WebAPI_Identity.Models;
@@ -65,7 +60,7 @@ namespace WebAPI_Identity
             builder.AddRoleManager<RoleManager<IdentityRole>>();
             builder.AddSignInManager<SignInManager<MyUser>>();
             builder.AddEntityFrameworkStores<ApplicationDbContext>();
-
+            //builder.Services.AddControllers();
 
             services.AddAuthentication(x =>
             {
@@ -103,15 +98,28 @@ namespace WebAPI_Identity
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
+            services.AddMvcCore().AddApiExplorer();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
+                    options.RoutePrefix = string.Empty;
+                });
             }
             else
             {
@@ -128,7 +136,8 @@ namespace WebAPI_Identity
             app.UseAuthentication();
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseRouting();
+
         }
     }
 }

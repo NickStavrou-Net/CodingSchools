@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -23,9 +20,9 @@ namespace WebAPI_Identity.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
 
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
         private readonly AppSettings _appSettings;
 
         public UsersController(
@@ -44,7 +41,7 @@ namespace WebAPI_Identity.Controllers
         {
             var user = _userService.Authenticate(UserDTO.UserName, UserDTO.Password);
 
-            if (user == null)
+            if (user is null)
                 return BadRequest(new { message = "Username or password is incorrect" });
 
             

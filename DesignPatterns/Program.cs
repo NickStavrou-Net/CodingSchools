@@ -56,13 +56,13 @@ namespace DesignPatterns
 
             #region BuilderPattern
             //TODO return ADO.NET sql connection string
-            FluentSqlConnection
-                .CreateConnection(config => config.ConnectionName = "Nick Connection")
-                .ForServer("(localdb)\\MSSQLLocalDB")
-                .AndDatabase("CSVDatabase")
-                .AsUser("DESKTOP-6VLMGU5\\NickStavrou")
-                .WithPassword("")
-                .Connect();
+            //FluentSqlConnection
+            //    .CreateConnection(config => config.ConnectionName = "Nick Connection")
+            //    .ForServer("(localdb)\\MSSQLLocalDB")
+            //    .AndDatabase("CSVDatabase")
+            //    .AsUser("DESKTOP-6VLMGU5\\NickStavrou")
+            //    .WithPassword("")
+            //    .Connect();
             #endregion
 
 

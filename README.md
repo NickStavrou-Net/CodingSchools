@@ -103,3 +103,23 @@
 <li>Unit testing with xUnit</li>
 </ul>
 </details>
+
+---
+
+<h1>Links to Presentations</h1>
+
+[01-Introduction to C# and Object Oriented programming](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/01-Introduction%20to%20C%23%20and%20Object%20Oriented%20programming.pptx)
+</br>
+[02-Object-Oriented programming and design-patterns](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/02-Object-Oriented%20programming%20and%20design-patterns.pptx)
+</br>
+[03-Agile Methodology-Azure DevOPS-Git](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/03-Agile%20Methodology-Azure%20DevOPS-Git.pptx)
+</br>
+[04-Databases & Entity Framework](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/04-Databases%20%26%20Entity%20Framework.pptx)
+</br>
+[05-ASP.NET Core MVC](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/05-ASP.NET%20Core%20MVC.pptx)
+</br>
+[06-Authentication and Authorization](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/06-Authentication%20and%20Authorization.pptx)
+</br>
+[07-WebAPI & Testing_Deployment](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/07-WebAPI%20%26%20Testing_Deployment.pptx)
+
+---

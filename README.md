@@ -112,7 +112,7 @@
 </br>
 [Object-Oriented programming and design-patterns](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/02-Object-Oriented%20programming%20and%20design-patterns.pptx)
 </br>
-Agile Methodology-Azure DevOPS-Git](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/03-Agile%20Methodology-Azure%20DevOPS-Git.pptx)
+[Agile Methodology-Azure DevOPS-Git](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/03-Agile%20Methodology-Azure%20DevOPS-Git.pptx)
 </br>
 [Databases & Entity Framework](https://github.com/NickStavrou-Net/CodingSchools/blob/master/Presentations/04-Databases%20%26%20Entity%20Framework.pptx)
 </br>

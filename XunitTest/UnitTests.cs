@@ -14,7 +14,6 @@ namespace XunitTest
       }
 
 
-      // [Fact(Skip ="Test skip")]
       [Fact]
       public void CheckThatFinalPriceWithVATIsCorrect()
       {

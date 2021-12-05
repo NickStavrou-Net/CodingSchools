@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace OOExamples
 {
-    interface IFlyable
-    {
-      void fly();
-      
-    }
+   public abstract class Animal
+   {
+      public void eat()
+      {
+         Console.WriteLine("Animal Eats");
+      }
+
+   }
 }

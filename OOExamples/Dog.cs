@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace OOExamples
 {
-    class Dog : Mammal, ISwimmable, IRunnable
+    class Dog : Animal, ISwimmable, IRunnable
     {
         public void myMethod()
         {
-            Console.WriteLine("IRunnable.myMethod implementaion");
+            Console.WriteLine("IRunnable.myMethod implementation");
         }
 
         void ISwimmable.myMethod()
         {
-            Console.WriteLine("ISwimmable.myMethod implementaion");
+            Console.WriteLine("ISwimmable.myMethod implementation");
         }
 
         public void run()

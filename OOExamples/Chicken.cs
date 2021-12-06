@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace OOExamples
 {
-    interface IFlyable
-    {
-      void fly();
+   public class Chicken : Bird
+   {
       
-    }
+   }
 }

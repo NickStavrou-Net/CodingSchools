@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace OOExamples
 {
-    public abstract class Mammal
-    {
-        public void eat()
-        {
-            Console.WriteLine("Mammal Eats");
-        }
-    }
+   public class Raven : Bird, IFlyable
+   {
+      public void fly()
+      {
+         Console.WriteLine("Raven flies...");
+      }
+   }
 }

@@ -7,6 +7,17 @@ using System.Threading.Tasks;
 
 namespace MVCMovies.Models
 {
+    public enum Genre
+    {
+        Romantic,
+        Comedy,
+        Western,
+        Action,
+        Horror,
+        [Display(Name= "Sci-Fi")]
+        SciFi,
+        Adventure
+    }
     public class Movie
     {
         public int Id { get; set; }
@@ -15,9 +26,9 @@ namespace MVCMovies.Models
         [Display(Name = "Release Date")]
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
-        public string Genre { get; set; }
+        public Genre Genre { get; set; }
 
-        [Column(TypeName = "decimal(18, 2)")]
+        [Column(TypeName = "decimal(8, 2)")]
         public decimal Price { get; set; }
         public string Rating { get; set; }
     }

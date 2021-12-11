@@ -14,6 +14,14 @@ namespace MVCMovies.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Movie>()
+                .Property(g => g.Genre)
+                .HasConversion<string>()
+                .HasMaxLength(50);
+        }
+
         public DbSet<Movie> Movie { get; set; }
     }
 }

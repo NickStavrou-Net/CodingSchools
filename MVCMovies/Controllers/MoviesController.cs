@@ -19,9 +19,19 @@ namespace MVCMovies.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
+            ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Release Date" ? "date_desc" : "Release Date";
+
             var movies = _context.Movie.Select(x => x);
+
+            movies = sortOrder switch
+            {
+                "name_desc" => movies.OrderByDescending(m => m.Title),
+                "Release Date" => movies.OrderBy(m => m.ReleaseDate),
+                _ => movies = movies.OrderBy(m => m.Title),
+            };
 
             if (!string.IsNullOrEmpty(searchString))
             {

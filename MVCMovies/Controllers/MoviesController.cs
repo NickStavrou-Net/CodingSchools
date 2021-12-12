@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace MVCMovies.Controllers
 {
@@ -19,10 +20,21 @@ namespace MVCMovies.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        public IActionResult Index(string sortOrder,string currentFilter, string searchString, int? page)
         {
             ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Release Date" ? "date_desc" : "Release Date";
+            ViewBag.CurrentSort = sortOrder;
+
+            if (searchString is not null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
 
             var movies = _context.Movie.Select(x => x);
 
@@ -37,8 +49,9 @@ namespace MVCMovies.Controllers
             {
                 movies = movies.Where(s => s.Title!.Contains(searchString));
             }
-
-            return View(await movies.ToListAsync());
+            int pageSize = 2;// change this to add more rows on your table and less pages
+            int pageNumber = (page ?? 1);
+            return View(movies.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Movies/Details/5

@@ -21,9 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnit", "xUnit\xUnit.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XunitTest", "XunitTest\XunitTest.csproj", "{A358B4C6-3393-4C5B-A9B7-C9B71041006C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCMovies", "MVCMovies\MVCMovies.csproj", "{10719F69-A854-44E1-A830-366555608592}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCMovies", "MVCMovies\MVCMovies.csproj", "{10719F69-A854-44E1-A830-366555608592}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async_Console", "Async_Console\Async_Console.csproj", "{84E7908C-710D-41F7-87FA-B8FAEC365189}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Async_Console", "Async_Console\Async_Console.csproj", "{84E7908C-710D-41F7-87FA-B8FAEC365189}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactManager", "ContactManager\ContactManager.csproj", "{83731121-8798-4692-B2E7-9955C0EF705F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{84E7908C-710D-41F7-87FA-B8FAEC365189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84E7908C-710D-41F7-87FA-B8FAEC365189}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84E7908C-710D-41F7-87FA-B8FAEC365189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83731121-8798-4692-B2E7-9955C0EF705F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83731121-8798-4692-B2E7-9955C0EF705F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83731121-8798-4692-B2E7-9955C0EF705F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83731121-8798-4692-B2E7-9955C0EF705F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

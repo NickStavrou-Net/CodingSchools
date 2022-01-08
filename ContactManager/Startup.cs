@@ -20,20 +20,16 @@ namespace ContactManager
 
         public IConfiguration Configuration { get; }
 
-        #region snippet_defaultPolicy
-        #region snippet
-        #region snippet2
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(
-                options => options.SignIn.RequireConfirmedAccount = true)
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDefaultIdentity<IdentityUser>(options =>
+                options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            #endregion
-
+    
             services.AddRazorPages();
 
             services.AddAuthorization(options =>
@@ -42,21 +38,15 @@ namespace ContactManager
                     .RequireAuthenticatedUser()
                     .Build();
             });
-            #endregion
 
             // Authorization handlers.
-            services.AddScoped<IAuthorizationHandler,
-                                  ContactIsOwnerAuthorizationHandler>();
+            services.AddScoped<IAuthorizationHandler, ContactIsOwnerAuthorizationHandler>();
 
-            services.AddSingleton<IAuthorizationHandler,
-                                  ContactAdministratorsAuthorizationHandler>();
+            services.AddSingleton<IAuthorizationHandler, ContactAdministratorsAuthorizationHandler>();
 
-            services.AddSingleton<IAuthorizationHandler,
-                                  ContactManagerAuthorizationHandler>();
+            services.AddSingleton<IAuthorizationHandler, ContactManagerAuthorizationHandler>();
         }
-        #endregion
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -67,7 +57,6 @@ namespace ContactManager
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

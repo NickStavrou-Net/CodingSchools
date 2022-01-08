@@ -2,7 +2,7 @@
 
 namespace ContactManager.Models
 {
-    #region snippet1
+
     public class Contact
     {
         public int ContactId { get; set; }
@@ -27,5 +27,5 @@ namespace ContactManager.Models
         Approved,
         Rejected
     }
-    #endregion
+
 }

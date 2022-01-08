@@ -9,7 +9,6 @@ using System;
 
 namespace ContactManager
 {
-    #region snippet
     public class Program
     {
         public static void Main(string[] args)
@@ -28,7 +27,7 @@ namespace ContactManager
                     // requires using Microsoft.Extensions.Configuration;
                     var config = host.Services.GetRequiredService<IConfiguration>();
                     // Set password with the Secret Manager tool.
-                    // dotnet user-secrets set SeedUserPW <pw>
+                    // dotnet user-secrets set "SeedUserPW" "pw"
 
                     var testUserPw = config["SeedUserPW"];
 
@@ -51,5 +50,5 @@ namespace ContactManager
                     webBuilder.UseStartup<Startup>();
                 });
     }
-    #endregion
+
 }

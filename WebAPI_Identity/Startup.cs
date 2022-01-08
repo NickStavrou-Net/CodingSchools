@@ -101,7 +101,7 @@ namespace WebAPI_Identity
 
 
             services.AddMvcCore().AddApiExplorer();
-
+            //swagger configuration
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
@@ -140,6 +140,7 @@ namespace WebAPI_Identity
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //boilerplate code for swaggerUI
                 app.UseSwagger();
                 app.UseSwaggerUI(options =>
                 {
@@ -164,8 +165,10 @@ namespace WebAPI_Identity
             app.UseHttpsRedirection();
             app.UseRouting();
 
+            //who are you?
             app.UseAuthentication();
 
+            //are you allowed?
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

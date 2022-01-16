@@ -1,0 +1,96 @@
+﻿@using TestMasterDetail.DataAccess
+@model MasterDetailViewModel
+
+
+@{
+   if (Model.DataEntryTarget ==
+DataEntryTargets.TeamMembers || Model.DataEntryTarget==DataEntryTargets.Both)
+   {
+      if (Model.SelectedTeam != null)
+      {
+         <h2>
+            List of Members :
+            @Model.SelectedTeam.Name
+         </h2>
+
+         <form method="post">
+
+            <input type="submit"
+                   value="Insert Member"
+                   asp-controller="TeamMembers"
+                   asp-action="InsertEntry"
+                   asp-route-teamid="@Model.SelectedTeam.TeamID" />
+
+            <br /><br />
+
+            <table border="1" cellpadding="10">
+               <tr>
+                  <th>Team ID</th>
+                  <th>Member ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th colspan="2">Actions</th>
+               </tr>
+
+               @foreach (var item in
+Model.SelectedTeam.Members)
+               {
+                  if (Model.SelectedTeamMember != null)
+                  {
+                     if (item.TeamMemberID ==
+Model.SelectedTeamMember.TeamMemberID)
+                     {
+                        @:<tr class="SelectedRow">
+                        }
+                        else
+                        {
+                           @:<tr>
+                        }
+                     }
+                     else
+                     {
+                        @:<tr>
+                     }
+                     <td>@item.TeamID</td>
+                     <td>@item.TeamMemberID</td>
+                     <td>@item.Name</td>
+                     <td>@item.Email</td>
+                     <td>
+                        <input type="submit"
+                               value="Manage Member"
+                               asp-controller="TeamMembers"
+                               asp-action="Select"
+                               asp-route-teamid="@item.TeamID"
+                               asp-route-memberid="@item.TeamMemberID" />
+                     </td>
+                  @:</tr>
+               }
+            </table>
+         </form>
+      }
+
+
+      if (Model.SelectedTeamMember != null)
+      {
+         if (Model.DataDisplayMode ==
+DataDisplayModes.Read)
+         {
+            await Html.RenderPartialAsync
+("_ShowTeamMember", Model.SelectedTeamMember);
+         }
+         if (Model.DataDisplayMode ==
+DataDisplayModes.Update)
+         {
+            await Html.RenderPartialAsync
+("_UpdateTeamMember", Model.SelectedTeamMember);
+         }
+      }
+      if (Model.DataDisplayMode ==
+DataDisplayModes.Insert)
+      {
+         await Html.RenderPartialAsync
+("_InsertTeamMember", new TeamMember()
+{ TeamID = Model.SelectedTeam.TeamID });
+      }
+   }
+}

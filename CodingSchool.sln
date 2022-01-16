@@ -31,6 +31,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventsDemo", "EventsDemo\Ev
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventsDemo-MVC", "EventsDemo-MVC\EventsDemo-MVC\EventsDemo-MVC.csproj", "{076C1D45-06D4-400D-BD0B-78788407C189}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestMasterDetail", "..\TestMasterDetail\TestMasterDetail\TestMasterDetail.csproj", "{3CDFEAD5-F431-480F-9F0F-71E5811A4671}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3DF5AF75-5841-4F91-9487-AFBD1C3F928F} = {3DF5AF75-5841-4F91-9487-AFBD1C3F928F}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +98,10 @@ Global
 		{076C1D45-06D4-400D-BD0B-78788407C189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{076C1D45-06D4-400D-BD0B-78788407C189}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{076C1D45-06D4-400D-BD0B-78788407C189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CDFEAD5-F431-480F-9F0F-71E5811A4671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CDFEAD5-F431-480F-9F0F-71E5811A4671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CDFEAD5-F431-480F-9F0F-71E5811A4671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CDFEAD5-F431-480F-9F0F-71E5811A4671}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

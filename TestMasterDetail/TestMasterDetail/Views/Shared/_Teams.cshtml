@@ -1,0 +1,88 @@
+﻿@using TestMasterDetail.DataAccess
+@model MasterDetailViewModel
+
+
+<h1>List of Teams</h1>
+
+<form method="post">
+
+   <input type="submit"
+          value="Insert Team"
+          asp-controller="Teams"
+          asp-action="InsertEntry" />
+
+   <br /><br />
+
+   <table border="1" cellpadding="10">
+      <tr>
+         <th>Team ID</th>
+         <th>Name</th>
+         <th>Description</th>
+         <th colspan="2">Actions</th>
+      </tr>
+
+      @foreach (var item in Model.Teams)
+      {
+         if (Model.SelectedTeam != null)
+         {
+            if (item.TeamID == Model.SelectedTeam.TeamID)
+            {
+               @:<tr class="SelectedRow">
+               }
+               else
+               {
+                  @:<tr>
+               }
+            }
+            else
+            {
+               @:<tr>
+            }
+            <td>@item.TeamID</td>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>
+               <input type="submit"
+                      value="Manage Team"
+                      asp-controller="Teams"
+                      asp-action="Select"
+                      asp-route-teamid="@item.TeamID" />
+            </td>
+            <td>
+               <input type="submit"
+                      value="Manage Members"
+                      asp-controller="TeamMembers"
+                      asp-action="List"
+                      asp-route-teamid="@item.TeamID" />
+            </td>
+         @:</tr>
+      }
+   </table>
+</form>
+<br />
+<br />
+
+@{
+   if (Model.DataEntryTarget == DataEntryTargets.Teams || Model.DataEntryTarget == DataEntryTargets.Both)
+   {
+      if (Model.SelectedTeam != null)
+      {
+         if (Model.DataDisplayMode ==
+DataDisplayModes.Read)
+         {
+            await Html.RenderPartialAsync
+("_ShowTeam", Model.SelectedTeam);
+         }
+         if (Model.DataDisplayMode ==
+DataDisplayModes.Update)
+         {
+            await Html.RenderPartialAsync
+("_UpdateTeam", Model.SelectedTeam);
+         }
+      }
+      if (Model.DataDisplayMode == DataDisplayModes.Insert)
+      {
+         await Html.RenderPartialAsync("_InsertTeam", new Team());
+      }
+   }
+}

@@ -1,0 +1,49 @@
+﻿@using TestMasterDetail.DataAccess
+@model TeamMember
+
+
+<h2>Edit Team Member : @Model.Name</h2>
+
+<form method="post">
+   <table border="1" cellpadding="10">
+      <tr>
+         <td>Team ID :</td>
+         <td>@Model.TeamID</td>
+      </tr>
+      <tr>
+         <td>Team Member ID :</td>
+         <td>@Model.TeamMemberID</td>
+      </tr>
+      <tr>
+         <td>Name :</td>
+         <td>@Model.Name</td>
+      </tr>
+      <tr>
+         <td>Email :</td>
+         <td>@Model.Email</td>
+      </tr>
+      <tr>
+         <td colspan="2">
+            <input type="submit"
+                   value="Edit"
+                   asp-controller="TeamMembers"
+                   asp-action="UpdateEntry"
+                   asp-route-teamid="@Model.TeamID"
+                   asp-route-memberid="@Model.TeamMemberID" />
+
+            <input type="submit"
+                   value="Delete"
+                   asp-controller="TeamMembers"
+                   asp-action="Delete"
+                   asp-route-teamid="@Model.TeamID"
+                   asp-route-memberid="@Model.TeamMemberID" />
+
+            <input type="submit"
+                   value="Cancel"
+                   asp-controller="TeamMembers"
+                   asp-action="CancelSelection"
+                   asp-route-teamid="@Model.TeamID" />
+         </td>
+      </tr>
+   </table>
+</form>
